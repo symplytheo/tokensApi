@@ -2,6 +2,7 @@
 
 const express = require('express');
 require('dotenv/config');
+const cors = require('cors');
 const { connectDatabase } = require('./config/db');
 const { tokenRoutes } = require('./routes/tokenRoutes');
 
@@ -12,7 +13,7 @@ connectDatabase();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors())
 
 // token routes
 app.use('/tokens', tokenRoutes);
