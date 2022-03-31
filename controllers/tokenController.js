@@ -33,7 +33,7 @@ exports.createToken = async (req, res) => {
   try {
     const { name, currency, icon } = req.body;
     const token = await Token.create({ name, currency, icon });
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       data: token,
     });
@@ -52,7 +52,7 @@ exports.updateToken = async (req, res) => {
       { name, currency, icon },
       options
     );
-    res.status(200).json({
+    return es.status(200).json({
       success: true,
       data: token,
     });

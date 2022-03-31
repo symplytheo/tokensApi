@@ -45,11 +45,11 @@ module.exports = (error, res, model) => {
 
   // send error response
   if (code && errMsg) {
-    res.status(code).json({
+    return res.status(code).json({
       success: false,
       error: errMsg,
     });
   } else {
-    res.status(500).send({ success: false, error });
+    return es.status(500).send({ success: false, error });
   }
 };
