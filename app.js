@@ -27,7 +27,7 @@ app.use(cors(corsOpts));
 app.use('/tokens', tokenRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Hello mon API');
+  res.send('Hello mon token API');
 });
 
 app.listen(PORT, () => {
