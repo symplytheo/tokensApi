@@ -8,19 +8,19 @@ const tokenSchema = new mongoose.Schema({
   name: {
     type: String,
     tim: true,
-    required: [true, 'Token name is required'],
+    required: [true, 'token name is required'],
   },
   currency: {
     type: String,
     unique: true,
     uppercase: true,
     trim: true,
-    required: [true, 'Token currency is required'],
+    required: [true, 'token currency is required'],
   },
   icon: {
     type: String,
-    required: [true, 'Token icon is required'],
-    validate: [isBase64Image, 'Token icon should be a base64 image string' ]
+    required: [true, 'token icon is required'],
+    validate: [isBase64Image, 'token icon should be a base64 image string' ]
   },
   createdAt: {
     type: Date,
