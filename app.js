@@ -13,7 +13,15 @@ connectDatabase();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
+
+const corsOpts = {
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOpts));
 
 // token routes
 app.use('/tokens', tokenRoutes);
