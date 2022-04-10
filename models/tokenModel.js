@@ -10,12 +10,12 @@ const tokenSchema = new mongoose.Schema({
     tim: true,
     required: [true, 'token name is required'],
   },
-  currency: {
+  symbol: {
     type: String,
     unique: true,
     uppercase: true,
     trim: true,
-    required: [true, 'token currency is required'],
+    required: [true, 'token symbol is required'],
   },
   address: {
     type: String,
