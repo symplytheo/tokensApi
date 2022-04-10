@@ -17,6 +17,13 @@ const tokenSchema = new mongoose.Schema({
     trim: true,
     required: [true, 'token currency is required'],
   },
+  address: {
+    type: String,
+    unique: true,
+    lowercase: true,
+    trim: true,
+    required: [true, 'token contract address is required'],
+  },
   icon: {
     type: String,
     required: [true, 'token icon is required'],
