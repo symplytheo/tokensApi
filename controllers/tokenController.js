@@ -31,7 +31,7 @@ exports.getTokenById = async (req, res) => {
 
 exports.createToken = async (req, res) => {
   try {
-    const { name, currency, icon } = req.body;
+    const { name, currency, icon, address } = req.body;
     const token = await Token.create({ name, currency, icon, address });
     return res.status(200).json({
       success: true,
@@ -44,7 +44,7 @@ exports.createToken = async (req, res) => {
 
 exports.updateToken = async (req, res) => {
   try {
-    const { name, currency, icon } = req.body;
+    const { name, currency, icon, address } = req.body;
     const { id } = req.params;
     const options = { new: true, runValidators: true };
     const token = await Token.findByIdAndUpdate(
