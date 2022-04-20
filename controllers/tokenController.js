@@ -32,6 +32,19 @@ exports.getTokenById = async (req, res) => {
 exports.createToken = async (req, res) => {
   try {
     const { name, symbol, icon, address } = req.body;
+    const sym = await Token.find({ symbol: symbol.toUpperCase() });
+    const addr = await Token.find({ address: address.toLowerCase() });
+    if (sym.length) {
+      return res.status(409).json({
+        success: false,
+        error: 'token with such symbol already exist',
+      });
+    } else if (addr.length) {
+      return res.status(409).json({
+        success: false,
+        error: 'token with such address already exist',
+      });
+    }
     const token = await Token.create({ name, symbol, icon, address });
     return res.status(200).json({
       success: true,

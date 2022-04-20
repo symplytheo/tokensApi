@@ -7,7 +7,7 @@ const isBase64Image = (str) => {
 const tokenSchema = new mongoose.Schema({
   name: {
     type: String,
-    tim: true,
+    trim: true,
     required: [true, 'token name is required'],
   },
   symbol: {
