@@ -33,6 +33,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`[Server]: Listening on port ${PORT}`);
 });
-
-// Export the Express API
-module.exports = app;
