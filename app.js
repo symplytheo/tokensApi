@@ -23,6 +23,10 @@ const corsOpts = {
 
 app.use(cors(corsOpts));
 
+app.get('/api', (req, res) => {
+  res.send('Welcome to tokens API')
+})
+
 // token routes
 app.use('/tokens', tokenRoutes);
 
